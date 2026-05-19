@@ -1,0 +1,463 @@
+.contenedor_principal {
+  --color_primario: #27babd;
+  --color_secundario: #fed555;
+  --color_naranja: #ff5043;
+  --color_suave: #ade2e0;
+  --color_calido: #fec873;
+  --color_fondo: #f8fafc; 
+
+  background-color: var(--color_fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.barra_navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background-color: #ffffff; /* Fondo blanco para que resalte del crema */
+  border-bottom: 2px solid var(--color_secundario); /* Borde sutil usando tu turquesa claro */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra muy difuminada */
+  position: relative; 
+  z-index: 50; /* Asegura que la sombra tape el contenido que está abajo */
+}
+
+.contenedor_logo {
+  height: 100px; /* Puedes subir o bajar este número para cambiar el tamaño de tu logo */
+  display: flex;
+  align-items: center;
+}
+
+.imagen_logo {
+  height: 100%;
+  width: auto; /* Esto mantiene la proporción original de tu SVG */
+  object-fit: contain;
+}
+
+.logo_texto {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.enlaces_navegacion {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.enlace_item {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.enlace_item:hover {
+  color: var(--color_primario); 
+}
+
+.titulo_seccion {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.zona_interactiva {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  position: relative;
+  height: 480px;
+}
+
+.boton_flecha {
+  background: transparent;
+  border: none;
+  font-size: 4rem;
+  color: #ccc;
+  cursor: pointer;
+  z-index: 20;
+  transition: color 0.3s;
+  padding: 0 1rem;
+}
+
+.boton_flecha:hover {
+  color: var(--color_primario);
+}
+
+.contenedor_cartas {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carta_base {
+  position: absolute;
+  width: 280px;
+  height: 420px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.carta_centro {
+  transform: translateX(0) scale(1.1);
+  z-index: 10;
+  opacity: 1;
+}
+
+.carta_izquierda {
+  transform: translateX(-65%) scale(0.85);
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.carta_derecha {
+  transform: translateX(65%) scale(0.85);
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.carta_oculta {
+  transform: translateX(0) scale(0.5);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zona_imagen {
+  width: 100%;
+  height: 220px;
+  background-color: #eee;
+  flex-shrink: 0;
+}
+
+.imagen_proyecto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zona_texto {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nombre_proyecto {
+  color: #0f172a;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.detalle_proyecto {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.etiqueta_stand {
+  font-weight: bold;
+  color: #64748b;
+}
+
+.zona_inferior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.pista_progreso {
+  width: 200px;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.relleno_progreso {
+  height: 100%;
+  background-color: var(--color_naranja);
+  width: 0%;
+}
+
+.boton_votar {
+  background-color: var(--color_naranja);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 80, 67, 0.3);
+}
+
+.boton_votar:hover {
+  transform: translateY(-3px);
+  background-color: #e63e32;
+}
+
+.seccion_categorias {
+  padding: 4rem;
+  background-color: var(--color_blanco);
+  text-align: center;
+}
+
+.cuadricula_categorias {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.tarjeta_categoria {
+  background-color: var(--color_fondo);
+  border: 2px solid var(--color_suave);
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color_primario);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tarjeta_categoria:hover {
+  border-color: var(--color_primario);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(39, 186, 189, 0.15);
+}
+
+.seccion_todos_proyectos {
+  padding: 5rem 4rem;
+  background-color: var(--color_fondo);
+}
+
+.cuadricula_proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tarjeta_pequena {
+  background-color: var(--color_blanco);
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+}
+
+.tarjeta_pequena:hover {
+  border-color: var(--color_suave);
+  box-shadow: 0 10px 25px rgba(39, 186, 189, 0.1);
+}
+
+.tarjeta_pequena.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.imagen_pequena {
+  height: 180px;
+  background-color: #f0f0f0;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cuerpo_tarjeta_pequena {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-grow: 1;
+}
+
+.titulo_pequeno {
+  color: var(--color_turquesa);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.pie_tarjeta_pequena {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color_suave);
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.enlace_tarjeta_completa {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+
+.barra_navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem; 
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--color_suave);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  position: relative; 
+  z-index: 50;
+}
+
+.contenedor_logo {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.imagen_logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .barra_navegacion {
+    padding: 1.5rem 4rem; 
+  }
+  .contenedor_logo {
+    height: 60px; 
+  }
+}
+
+.enlaces_navegacion {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.enlace_item {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.enlace_item:hover {
+  color: var(--color_primario);
+}
+
+.boton_hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.linea_hamburguesa {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: var(--color_primario);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.fondo_oscuro {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .boton_hamburguesa {
+    display: flex;
+  }
+  .abierto .linea_hamburguesa:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .abierto .linea_hamburguesa:nth-child(2) {
+    opacity: 0;
+  }
+  .abierto .linea_hamburguesa:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .enlaces_navegacion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 6rem; 
+    gap: 2.5rem;
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 55;
+  }
+
+  .enlaces_navegacion.menu_activo {
+    transform: translateX(0);
+  }
+
+  .fondo_oscuro.activo {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+  }
+}
