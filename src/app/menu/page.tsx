@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./VotacionPage.module.css";
 
 // ── Reemplaza esta URL con la de tu Google Form ──────────────────────────────
-const GOOGLE_FORM_URL = "https://forms.google.com/TU_FORMULARIO_AQUI";
+const GOOGLE_FORM_URL = "https://forms.gle/7YDnPfb84RfTg1os9";
 
 interface Proyecto {
   id: string;
